@@ -1,0 +1,19 @@
+class Solution:
+    def sum_square(self,n):
+        m = n
+        res_sum = 0
+        while m > 0:
+            res_sum = res_sum+(m%10)**2
+            m = m//10
+        return res_sum
+    def isHappy(self, n):
+        """
+        :type n: int
+        :rtype: bool
+        """
+        while n not in [4,16,37,58,89,145,42,20]:
+            if n == 1:
+                return True
+            else:
+                n = self.sum_square(n)
+        return False
